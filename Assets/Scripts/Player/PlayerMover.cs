@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerMover : MonoBehaviour
 {
@@ -19,7 +18,7 @@ public class PlayerMover : MonoBehaviour
 
     private void Update()
     {
-        if(transform.position != _targetPosition && ObjectPool.score <= 6)
+        if(transform.position != _targetPosition && ObjectPool.score <= Score.playerMoverStop)
             transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _speed*Time.deltaTime);
     }
 

@@ -13,7 +13,7 @@ public class ObjectPool : MonoBehaviour
 
     public static int score = 0;
 
-    protected void Initialize(GameObject[] prefabs)
+    protected void Initialize(GameObject[] prefabs) //свич кейс? так же по названию сцены(стены текста получатся)
     {
         GameObject spawned0 = Instantiate(prefabs[0], _container.transform);
         spawned0.SetActive(false);
@@ -56,12 +56,12 @@ public class ObjectPool : MonoBehaviour
     {
         score++;
 
-        if (score % 10 == 0)
+        if (score % Score.extraLives == 0)
         {
             result = _pool.FirstOrDefault(p => p.name.ToString() == "Enemy3(Clone)");
             return result != null;
         } 
-        else if (score % 20 == 0)
+        else if (score % Score.hardMobs == 0)
         {
             result = _pool.FirstOrDefault(p => p.name.ToString() == "HardEnemy(Clone)");
             return result != null;

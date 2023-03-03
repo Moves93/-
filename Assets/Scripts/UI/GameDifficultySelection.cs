@@ -5,9 +5,8 @@ using TMPro;
 
 public class GameDifficultySelection : MonoBehaviour
 {
-    //public TMP_Text Text;
     public TMP_Dropdown Dropdown;
-    public string gameDifficultyText;
+    public static string gameDifficultyText;
 
     public void DifficultySelection(int gameDifficulty)
     {
@@ -20,7 +19,7 @@ public class GameDifficultySelection : MonoBehaviour
 
     private void Start()
     {
-       //gameDifficultyText = "Легкая";
+       gameDifficultyText = "Легкая";
     }
 
     private void Update()

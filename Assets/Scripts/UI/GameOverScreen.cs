@@ -39,7 +39,9 @@ public class GameOverScreen : MonoBehaviour
     private void OnRestartButtonClick()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(0);
+        ObjectPool.score = 0;
+        SceneManager.LoadScene(1);
+
     }
 
     private void OnQuitButtonClick()

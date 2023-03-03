@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class EnemyMover : MonoBehaviour
 {
-    [SerializeField] private float _speed;
+    private int _speed;
 
+    private void Start()
+    {
+        _speed = Score.speedMobs;
+    }
 
     private void Update()
     {
-        transform.Translate(Vector3.left*_speed*Time.deltaTime);
+        transform.Translate(Vector3.left * _speed * Time.deltaTime);
     }
 }
