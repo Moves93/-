@@ -12,13 +12,13 @@ public class Spawner : ObjectPool
 
     private void Start()
     {
-        //Initialize(_enemyPrefabs);
-        switch (GameDifficultySelection.gameDifficultyText)
-        {
-            case "Легкая":
-                Initialize(_enemyPrefabs);
-                break;
-        }
+        Initialize(_enemyPrefabs);
+        //switch (GameDifficultySelection.gameDifficultyText)
+        //{
+        //    case "Легкая":
+        //        Initialize(_enemyPrefabs);
+        //        break;
+        //}
     }
 
     private void Update()

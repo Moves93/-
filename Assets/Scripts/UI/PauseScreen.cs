@@ -9,6 +9,7 @@ public class PauseScreen : MonoBehaviour
     [SerializeField] private Button _restartButton;
     [SerializeField] private Button _quitButton;
     [SerializeField] private Button _continueButton;
+    [SerializeField] private Button _soundButton;
     [SerializeField] private PauseScreen _gamePauseScreen;
 
     private void Start()
@@ -21,6 +22,7 @@ public class PauseScreen : MonoBehaviour
         _restartButton.onClick.AddListener(OnRestartButtonClick);
         _quitButton.onClick.AddListener(OnQuitButtonClick);
         _continueButton.onClick.AddListener(OnContinueButtonClick);
+        _soundButton.onClick.AddListener(OnSoundButtonClick);
     }
 
     private void OnDisable()
@@ -28,6 +30,7 @@ public class PauseScreen : MonoBehaviour
         _restartButton.onClick.RemoveListener(OnRestartButtonClick);
         _quitButton.onClick.RemoveListener(OnQuitButtonClick);
         _continueButton.onClick.RemoveListener(OnContinueButtonClick);
+        _soundButton.onClick.RemoveListener(OnSoundButtonClick);
     }
 
     private void OnRestartButtonClick()
@@ -48,6 +51,10 @@ public class PauseScreen : MonoBehaviour
     {
         _gamePauseScreen.gameObject.SetActive(false);
         Time.timeScale = 1f;
+    }
+    private void OnSoundButtonClick()
+    {
+
     }
 
 
