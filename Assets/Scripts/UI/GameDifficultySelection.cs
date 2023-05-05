@@ -24,6 +24,5 @@ public class GameDifficultySelection : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(gameDifficultyText);
     }
 }

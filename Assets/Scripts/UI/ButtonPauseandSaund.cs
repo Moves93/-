@@ -8,16 +8,13 @@ public class ButtonPauseandSaund : MonoBehaviour
     [SerializeField] private Button _pauseButton;
     [SerializeField] private PauseScreen _gamePauseScreen;
 
-
     private void OnEnable()
     {
-        
         _pauseButton.onClick.AddListener(OnPauseButtonClick);
     }
 
     private void OnDisable()
     {
-       
         _pauseButton.onClick.RemoveListener(OnPauseButtonClick);
     }
 
@@ -26,5 +23,4 @@ public class ButtonPauseandSaund : MonoBehaviour
         Time.timeScale = 0;
         _gamePauseScreen.gameObject.SetActive(true);
     }
-
 }

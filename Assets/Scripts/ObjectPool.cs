@@ -11,7 +11,7 @@ public class ObjectPool : MonoBehaviour
    
     private List<GameObject> _pool = new List<GameObject>();
 
-    public static int score = 0;
+    public static float score = 0;
 
     protected void Initialize(GameObject[] prefabs) //свич кейс? так же по названию сцены(стены текста получатся)
     {
@@ -43,23 +43,27 @@ public class ObjectPool : MonoBehaviour
         spawned6.SetActive(false);
         _pool.Add(spawned6);
 
-        GameObject spawned7 = Instantiate(prefabs[3], _container.transform); // база
+        GameObject spawned7 = Instantiate(prefabs[3], _container.transform); // осминог
         spawned7.SetActive(false);
         _pool.Add(spawned7);
+
+        //GameObject spawned8 = Instantiate(prefabs[4], _container.transform); // кама пуля
+        //spawned8.SetActive(false);
+        //_pool.Add(spawned8);
     }
     
     protected bool TryGetObject(out GameObject result)
     {
-        score++;
+        //score++;
 
-        if (score % Score.hardMobs == 0)
+        if (score % Score.hardMobs < 1)
         {
             //result = _pool.FirstOrDefault(p => p.name.ToString() == "Enemy3(Clone)"); //поменяй местами, хард не спавнится
             //return result != null;
             result = _pool.FirstOrDefault(p => p.name.ToString() == "HardEnemy(Clone)");
             return result != null;
         } 
-        else if (score % Score.extraLives == 0)
+        else if (score % Score.extraLives < 1)
         {
             //result = _pool.FirstOrDefault(p => p.name.ToString() == "HardEnemy(Clone)");
             //return result != null;

@@ -9,7 +9,7 @@ public class ScoreDisplay : MonoBehaviour
 
     private void Update()
     {
-        _scoreDisplay.text = "Счет: " + ObjectPool.score.ToString();
+        _scoreDisplay.text = "Счет: " + ((int)ObjectPool.score).ToString();
         if (ObjectPool.score >= Score.weAreInPlace)
         {
             _scoreDisplay.text = "Мы на месте";

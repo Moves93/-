@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -7467124974092962548}
   m_Layer: 0
   m_Name: HardEnemy
-  m_TagString: Untagged
+  m_TagString: HardEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7355929407601409436}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6d31ed41655d824cb4ffff7bd5d0176, type: 3}
   m_Name: 
@@ -183,3 +183,5 @@ MonoBehaviour:
   _stepSize: 3
   _maxHeight: 2
   _minHeight: -4
+  _timeStep: 2
+  _bullet: {fileID: 5811934476162919942, guid: 8abc872230667a64790ef08f85631e64, type: 3}

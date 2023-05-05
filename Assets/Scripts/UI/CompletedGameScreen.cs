@@ -1,48 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class PauseScreen : MonoBehaviour
+public class CompletedGameScreen : MonoBehaviour
 {
     [SerializeField] private Button _restartButton;
     [SerializeField] private Button _quitButton;
-    [SerializeField] private Button _continueButton;
-    [SerializeField] private Button _soundButton;
-    [SerializeField] private PauseScreen _gamePauseScreen;
-
-   
+    [SerializeField] private CompletedGameScreen _completedGameScreen;
 
 
     private void Start()
     {
-        _gamePauseScreen.gameObject.SetActive(false);
-        
+        _completedGameScreen.gameObject.SetActive(false);
+        Debug.Log("completedGameScreen_Start");
     }
 
     private void OnEnable()
     {
         _restartButton.onClick.AddListener(OnRestartButtonClick);
         _quitButton.onClick.AddListener(OnQuitButtonClick);
-        _continueButton.onClick.AddListener(OnContinueButtonClick);
-        _soundButton.onClick.AddListener(OnSoundButtonClick);
     }
 
     private void OnDisable()
     {
         _restartButton.onClick.RemoveListener(OnRestartButtonClick);
         _quitButton.onClick.RemoveListener(OnQuitButtonClick);
-        _continueButton.onClick.RemoveListener(OnContinueButtonClick);
-        _soundButton.onClick.RemoveListener(OnSoundButtonClick);
+        _completedGameScreen.gameObject.SetActive(false);
     }
 
     private void OnRestartButtonClick()
     {
-        Time.timeScale = 1f;
         ObjectPool.score = 0;
+        Time.timeScale = 1f;
         SceneManager.LoadScene(1);
-        
     }
 
     private void OnQuitButtonClick()
@@ -51,17 +43,4 @@ public class PauseScreen : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
-
-    private void OnContinueButtonClick()
-    {
-        _gamePauseScreen.gameObject.SetActive(false);
-        Time.timeScale = 1f;
-    }
-    private void OnSoundButtonClick()
-    {
-
-    }
-
-
-
 }
